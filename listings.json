@@ -1,0 +1,7 @@
+{
+  "_instructions": "To add items: 1) Visit /collectables/debug to see all wallet assets with IDs. 2) Copy the asset_id. 3) Add an entry below with status for_sale. 4) Push to GitHub to deploy. To remove: set status to unlisted or delete the entry. Items transferred out of the wallet auto-disappear.",
+  "owner": "1.prg.wam",
+  "contact_method": "Contact to Buy",
+  "contact_email": "",
+  "listings": []
+}

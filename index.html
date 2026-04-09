@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jeffs Digital Collectibles</title>
+  <meta name="description" content="Curated digital collectibles from Jeff's personal collection. Verified on the WAX blockchain.">
+  <meta property="og:title" content="Jeffs Digital Collectibles">
+  <meta property="og:description" content="Curated digital collectibles from Jeff's personal collection. Verified on the WAX blockchain.">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="site-nav" id="site-nav">
+    <a href="/" class="nav-brand">
+      <img src="/logo.png" alt="Jeff's Digital Collectibles" class="nav-logo-img">
+      <span class="nav-brand-text">Jeffs Digital Collectibles</span>
+    </a>
+    <div class="nav-links" id="nav-links">
+      <a href="#collection-section" class="nav-link">Collection</a>
+      <a href="#how-to-buy" class="nav-link">How to Buy</a>
+      <a href="/terms" class="nav-link">Terms</a>
+      <a href="/privacy" class="nav-link">Privacy</a>
+      <a href="/sms-consent" class="nav-link">SMS Consent</a>
+    </div>
+    <button class="nav-hamburger" id="nav-hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-logo">
+      <img src="/logo.png" alt="Jeff's Digital Collectibles" class="hero-logo-img">
+    </div>
+    <div class="hero-badge">
+      <span class="hero-badge-dot"></span>
+      Verified on WAX Blockchain
+    </div>
+    <p class="hero-sub">
+      A hand-picked selection of digital collectibles from Jeff's personal vault.
+      Every item is blockchain-verified and available for direct purchase.
+    </p>
+    <div class="hero-stats" id="hero-stats">
+      <div class="hero-stat">
+        <div class="hero-stat-value" id="stat-available">--</div>
+        <div class="hero-stat-label">Available</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-value" id="stat-collections">--</div>
+        <div class="hero-stat-label">Collections</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-value" id="stat-total">--</div>
+        <div class="hero-stat-label">In Vault</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COLLECTION -->
+  <section class="section" id="collection-section">
+    <div class="section-header">
+      <div class="section-label">Available Now</div>
+      <h2 class="section-title">The Collection</h2>
+      <p class="section-subtitle">Each piece is held in Jeff's personal wallet until sold.</p>
+      <div class="collection-filter" id="collection-filter" style="display:none;">
+        <label class="filter-label" for="collection-select">Filter by collection</label>
+        <select id="collection-select" class="filter-select">
+          <option value="__all__">All Collections</option>
+        </select>
+      </div>
+    </div>
+
+    <div id="collection-state">
+      <div class="state-message">
+        <div class="loading-spinner"></div>
+        <h3>Loading collection...</h3>
+        <p>Fetching live data from the WAX blockchain</p>
+      </div>
+    </div>
+
+    <div class="collection-grid" id="collection-grid" style="display:none;"></div>
+    <div class="pagination" id="pagination" style="display:none;"></div>
+  </section>
+
+  <!-- HOW TO BUY -->
+  <section class="section" id="how-to-buy">
+    <div class="section-header">
+      <div class="section-label">How It Works</div>
+      <h2 class="section-title">Buying From Jeff</h2>
+    </div>
+    <div class="how-grid">
+      <div class="how-card">
+        <div class="how-number">1</div>
+        <h3>Browse</h3>
+        <p>Look through the available pieces above. Every item listed here is currently held in Jeff's wallet and ready to transfer.</p>
+      </div>
+      <div class="how-card">
+        <div class="how-number">2</div>
+        <h3>Enquire</h3>
+        <p>Found something you want? Hit the enquire button on any item to send Jeff a text message about the piece you're interested in.</p>
+      </div>
+      <div class="how-card">
+        <div class="how-number">3</div>
+        <h3>Collect</h3>
+        <p>Once payment is confirmed, the item transfers straight to your WAX wallet. Ownership is recorded permanently on-chain.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ENQUIRY MODAL -->
+  <div class="modal-overlay" id="enquiry-modal">
+    <div class="modal-box">
+      <!-- Stage 1: Consent + Phone -->
+      <div id="modal-stage-1">
+        <div class="modal-header">
+          <h3 class="modal-title">Enquire About This Item</h3>
+          <button class="modal-close" id="modal-close" aria-label="Close">&times;</button>
+        </div>
+        <div class="modal-item-info">
+          <div class="modal-item-collection" id="modal-collection"></div>
+          <div class="modal-item-name" id="modal-item-name"></div>
+          <div class="modal-item-id" id="modal-item-id"></div>
+        </div>
+        <div class="modal-body">
+          <p class="modal-desc">Text Jeff directly about this item.</p>
+          <label class="modal-label" for="enquiry-phone">Your phone number</label>
+          <input type="tel" id="enquiry-phone" class="modal-input" placeholder="+1 (555) 123-4567" autocomplete="tel">
+          <label class="modal-checkbox-wrap">
+            <input type="checkbox" id="enquiry-consent">
+            <span class="modal-checkbox-text">
+              I agree to receive SMS from Jeff's Digital Collectibles LLC about this item enquiry.
+              Msg frequency varies. Msg &amp; Data rates may apply.
+              Reply STOP to opt out, HELP for help.
+              See <a href="/terms" target="_blank">Terms</a> and <a href="/privacy" target="_blank">Privacy Policy</a>.
+            </span>
+          </label>
+          <div class="modal-actions">
+            <button class="modal-btn modal-btn-primary" id="modal-send" disabled>Send Enquiry via SMS</button>
+            <button class="modal-btn modal-btn-secondary" id="modal-cancel">Cancel</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Stage 2: Confirmation -->
+      <div id="modal-stage-2" style="display:none;">
+        <div class="modal-header">
+          <h3 class="modal-title">Message Ready</h3>
+          <button class="modal-close modal-close-2" aria-label="Close">&times;</button>
+        </div>
+        <div class="modal-body modal-confirm">
+          <div class="modal-check-icon">
+            <svg width="48" height="48" viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="24" fill="rgba(74,127,199,0.12)"/><path d="M15 24l6 6 12-12" stroke="#4a7fc7" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <p class="modal-desc">Your SMS app will open with a pre-written message about <strong id="modal-confirm-name"></strong>.</p>
+          <div class="modal-actions">
+            <a href="#" class="modal-btn modal-btn-primary" id="modal-sms-link" target="_blank">Open SMS App</a>
+            <button class="modal-btn modal-btn-secondary modal-close-2">Done</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <img src="/logo.png" alt="Jeff's Digital Collectibles" class="footer-logo-img">
+    <div class="footer-brand">Jeff's Digital Collectibles LLC</div>
+    <div class="footer-note">All items verified on the WAX blockchain. Ownership is transparent and permanent.</div>
+    <div class="footer-links">
+      <a href="/terms">Terms</a>
+      <a href="/privacy">Privacy</a>
+      <a href="/sms-consent">SMS Consent</a>
+      <a href="mailto:jeffswax@gmail.com">Contact</a>
+    </div>
+    <div class="footer-wallet">Wallet: 1.prg.wam</div>
+    <div class="footer-legal">
+      Jeff's Digital Collectibles LLC &middot; Wisconsin Domestic LLC &middot; File #J058561 &middot; Eau Claire, WI 54701
+    </div>
+    <div class="footer-copy">&copy; 2026 Jeff's Digital Collectibles LLC</div>
+  </footer>
+
+  <script src="/app.js"></script>
+</body>
+</html>

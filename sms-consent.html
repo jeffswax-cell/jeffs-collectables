@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SMS Consent - Jeffs Digital Collectibles</title>
+  <meta name="description" content="SMS opt-in and consent for Jeff's Digital Collectibles LLC item enquiries.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+  <style>
+    .consent-form-section {
+      max-width: 560px;
+      margin: 0 auto 3rem;
+      background: var(--color-bg-card);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      box-shadow: var(--shadow-card);
+    }
+    .consent-form-section h2 {
+      font-family: var(--font-display);
+      font-size: 1.35rem;
+      margin-bottom: 0.25rem;
+    }
+    .consent-form-section .form-subtitle {
+      color: var(--color-text-muted);
+      font-size: 0.92rem;
+      margin-bottom: 1.5rem;
+    }
+    .consent-form-label {
+      display: block;
+      font-weight: 600;
+      font-size: 0.88rem;
+      margin-bottom: 0.35rem;
+      color: var(--color-text);
+    }
+    .consent-form-input {
+      display: block;
+      width: 100%;
+      padding: 0.65rem 0.85rem;
+      font-size: 0.95rem;
+      font-family: var(--font-body);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-sm);
+      background: var(--color-bg);
+      color: var(--color-text);
+      margin-bottom: 1rem;
+      transition: border-color var(--transition);
+    }
+    .consent-form-input:focus {
+      outline: none;
+      border-color: var(--color-blue);
+      box-shadow: 0 0 0 3px var(--color-blue-glow);
+    }
+    .consent-checkbox-wrap {
+      display: flex;
+      gap: 0.65rem;
+      align-items: flex-start;
+      margin: 1.25rem 0;
+      padding: 1rem;
+      background: var(--color-bg);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-sm);
+    }
+    .consent-checkbox-wrap input[type="checkbox"] {
+      margin-top: 3px;
+      flex-shrink: 0;
+      width: 18px;
+      height: 18px;
+      cursor: pointer;
+    }
+    .consent-checkbox-text {
+      font-size: 0.85rem;
+      line-height: 1.5;
+      color: var(--color-text);
+    }
+    .consent-checkbox-text a {
+      color: var(--color-blue);
+      text-decoration: underline;
+    }
+    .consent-submit-btn {
+      display: block;
+      width: 100%;
+      padding: 0.75rem 1.5rem;
+      font-size: 0.95rem;
+      font-weight: 700;
+      font-family: var(--font-display);
+      color: var(--color-white);
+      background: var(--color-blue);
+      border: none;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      transition: background var(--transition);
+    }
+    .consent-submit-btn:hover {
+      background: var(--color-blue-dim);
+    }
+    .consent-submit-btn:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+    .consent-confirmation {
+      display: none;
+      text-align: center;
+      padding: 1.5rem 1rem;
+    }
+    .consent-confirmation.show {
+      display: block;
+    }
+    .consent-confirmation .check-icon {
+      margin-bottom: 0.75rem;
+    }
+    .consent-confirmation p {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: var(--color-text);
+    }
+    .consent-confirmation .confirm-main {
+      font-weight: 600;
+      font-size: 1.05rem;
+      margin-bottom: 0.5rem;
+    }
+    .consent-confirmation .confirm-details {
+      color: var(--color-text-muted);
+      font-size: 0.88rem;
+    }
+    .consent-form-inner.hidden {
+      display: none;
+    }
+    .policy-section {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    .policy-section h2 {
+      font-family: var(--font-display);
+      font-size: 1.15rem;
+      margin-top: 1.75rem;
+      margin-bottom: 0.5rem;
+    }
+    .policy-section p,
+    .policy-section ul {
+      font-size: 0.92rem;
+      line-height: 1.65;
+      color: var(--color-text);
+      margin-bottom: 0.75rem;
+    }
+    .policy-section ul {
+      padding-left: 1.5rem;
+    }
+    .policy-section li {
+      margin-bottom: 0.35rem;
+    }
+    .policy-section a {
+      color: var(--color-blue);
+    }
+    .legal-contact {
+      margin-top: 2rem;
+      padding-top: 1.25rem;
+      border-top: 1px solid var(--color-border);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="site-nav" id="site-nav">
+    <a href="/" class="nav-brand">
+      <img src="/logo.png" alt="Jeff's Digital Collectibles" class="nav-logo-img">
+      <span class="nav-brand-text">Jeffs Digital Collectibles</span>
+    </a>
+    <div class="nav-links" id="nav-links">
+      <a href="/" class="nav-link">Home</a>
+      <a href="/terms" class="nav-link">Terms</a>
+      <a href="/privacy" class="nav-link">Privacy</a>
+      <a href="/sms-consent" class="nav-link">SMS Consent</a>
+    </div>
+    <button class="nav-hamburger" id="nav-hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- CONTENT -->
+  <main class="legal-page">
+    <h1>SMS Consent &amp; Opt-In</h1>
+    <p class="legal-effective">Jeff's Digital Collectibles LLC</p>
+
+    <!-- ========== STATIC OPT-IN FORM ========== -->
+    <div class="consent-form-section">
+      <h2>Enquire About an Item via SMS</h2>
+      <p class="form-subtitle">Enter your phone number to text Jeff about a collectible you're interested in.</p>
+
+      <form id="consent-form" class="consent-form-inner" novalidate>
+        <label class="consent-form-label" for="consent-phone">Phone number <span style="color:var(--color-error)">*</span></label>
+        <input type="tel" id="consent-phone" class="consent-form-input" placeholder="+1 (555) 123-4567" autocomplete="tel" required>
+
+        <label class="consent-form-label" for="consent-name">Name (optional)</label>
+        <input type="text" id="consent-name" class="consent-form-input" placeholder="Your name" autocomplete="name">
+
+        <div class="consent-checkbox-wrap">
+          <input type="checkbox" id="consent-check" required>
+          <span class="consent-checkbox-text">
+            I agree to receive SMS messages from <strong>Jeff's Digital Collectibles LLC</strong> about item enquiries, including availability, pricing, and transfer confirmation.
+            Message frequency varies. Msg &amp; Data rates may apply.
+            Reply STOP to opt out, HELP for help.
+            See <a href="/terms" target="_blank">Terms of Service</a>, <a href="/privacy" target="_blank">Privacy Policy</a>, and <a href="/sms-consent">SMS Consent Policy</a>.
+            <br><strong>Consent is not a condition of purchase.</strong>
+          </span>
+        </div>
+
+        <button type="submit" class="consent-submit-btn" id="consent-submit" disabled>Send Enquiry via SMS</button>
+      </form>
+
+      <!-- Confirmation (shown after submit) -->
+      <div class="consent-confirmation" id="consent-confirmation">
+        <div class="check-icon">
+          <svg width="56" height="56" viewBox="0 0 56 56" fill="none"><circle cx="28" cy="28" r="28" fill="rgba(45,168,98,0.12)"/><path d="M17 28l8 8 14-14" stroke="#2da862" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <p class="confirm-main">You're opted in for item enquiry messages.</p>
+        <p class="confirm-details">
+          Reply STOP to opt out, HELP for help.<br>
+          Msg frequency varies. Msg &amp; Data rates may apply.
+        </p>
+      </div>
+    </div>
+
+    <!-- ========== FULL POLICY (below the form) ========== -->
+    <div class="policy-section">
+      <h2>Program Description</h2>
+      <p>Jeff's Digital Collectibles LLC offers an SMS-based enquiry service that lets potential buyers contact Jeff directly about digital collectible items listed on this website. When you use the opt-in form above or the "Enquire" button on any item, you can send a text message to Jeff about that specific item.</p>
+
+      <h2>How to Opt In</h2>
+      <p>You opt in to SMS communication by completing the form above or the enquiry form on the homepage. The opt-in process requires you to:</p>
+      <ul>
+        <li>Enter your phone number</li>
+        <li>Check the consent checkbox confirming you agree to receive SMS messages from Jeff's Digital Collectibles LLC</li>
+        <li>Click "Send Enquiry via SMS" to proceed</li>
+      </ul>
+      <p>Your consent is specific to the item you're enquiring about. Each new enquiry requires a separate opt-in.</p>
+
+      <h2>Message Frequency</h2>
+      <p>Message frequency varies. You'll receive SMS messages only in direct response to your enquiry about a specific item. Typical conversations involve 2-10 messages while discussing availability, pricing, and transfer details for the item you asked about. We will not send you promotional messages, marketing texts, or messages about items you didn't enquire about.</p>
+
+      <h2>Message and Data Rates</h2>
+      <p>Standard message and data rates may apply depending on your mobile carrier and plan. Jeff's Digital Collectibles LLC does not charge any fees for SMS messages. Contact your mobile carrier for details about your messaging plan.</p>
+
+      <h2>How to Opt Out</h2>
+      <p>You can opt out of SMS messages at any time by:</p>
+      <ul>
+        <li>Replying <strong>STOP</strong> to any message from us</li>
+        <li>Sending the word <strong>STOP</strong> to (715) 894-6330</li>
+        <li>Emailing <a href="mailto:jeffswax@gmail.com">jeffswax@gmail.com</a> with your phone number and a request to stop messages</li>
+      </ul>
+      <p>After opting out, you'll receive one final confirmation message. You will not receive any further SMS messages from us unless you initiate a new enquiry and opt in again.</p>
+
+      <h2>Help</h2>
+      <p>For help with SMS messages, you can:</p>
+      <ul>
+        <li>Reply <strong>HELP</strong> to any message from us for assistance</li>
+        <li>Email <a href="mailto:jeffswax@gmail.com">jeffswax@gmail.com</a></li>
+        <li>Call (715) 894-6330</li>
+      </ul>
+
+      <h2>Supported Carriers</h2>
+      <p>SMS messages are sent via standard SMS/MMS protocols and should work with all major US mobile carriers, including AT&amp;T, Verizon, T-Mobile, Sprint, and their subsidiaries. Carriers are not liable for delayed or undelivered messages.</p>
+
+      <h2>Privacy</h2>
+      <p>Your phone number and the content of our SMS conversations are kept private. We will not share, sell, or rent your phone number or message content to any third party. For full details, see our <a href="/privacy">Privacy Policy</a>.</p>
+
+      <h2>Terms</h2>
+      <p>By opting in to SMS messages, you also agree to our <a href="/terms">Terms of Service</a>. SMS consent is not a condition of purchase. You can always contact us via email at <a href="mailto:jeffswax@gmail.com">jeffswax@gmail.com</a> instead of SMS.</p>
+
+      <div class="legal-contact">
+        <h3>Contact</h3>
+        <p>
+          Jeff's Digital Collectibles LLC<br>
+          Eau Claire, WI 54701<br>
+          Email: <a href="mailto:jeffswax@gmail.com">jeffswax@gmail.com</a><br>
+          Phone: (715) 894-6330
+        </p>
+      </div>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <img src="/logo.png" alt="Jeff's Digital Collectibles" class="footer-logo-img">
+    <div class="footer-brand">Jeff's Digital Collectibles LLC</div>
+    <div class="footer-note">All items verified on the WAX blockchain. Ownership is transparent and permanent.</div>
+    <div class="footer-links">
+      <a href="/terms">Terms</a>
+      <a href="/privacy">Privacy</a>
+      <a href="/sms-consent">SMS Consent</a>
+      <a href="mailto:jeffswax@gmail.com">Contact</a>
+    </div>
+    <div class="footer-wallet">Wallet: 1.prg.wam</div>
+    <div class="footer-legal">
+      Jeff's Digital Collectibles LLC &middot; Wisconsin Domestic LLC &middot; File #J058561 &middot; Eau Claire, WI 54701
+    </div>
+    <div class="footer-copy">&copy; 2026 Jeff's Digital Collectibles LLC</div>
+  </footer>
+
+  <script>
+    // Nav hamburger
+    var hamburger = document.getElementById('nav-hamburger');
+    var navLinks = document.getElementById('nav-links');
+    if (hamburger) {
+      hamburger.addEventListener('click', function () {
+        navLinks.classList.toggle('open');
+        hamburger.classList.toggle('open');
+      });
+      navLinks.addEventListener('click', function (e) {
+        if (e.target.classList.contains('nav-link')) {
+          navLinks.classList.remove('open');
+          hamburger.classList.remove('open');
+        }
+      });
+    }
+    var navEl = document.getElementById('site-nav');
+    window.addEventListener('scroll', function () {
+      if (window.scrollY > 40) navEl.classList.add('scrolled');
+      else navEl.classList.remove('scrolled');
+    });
+
+    // Consent form logic
+    var form = document.getElementById('consent-form');
+    var phoneInput = document.getElementById('consent-phone');
+    var checkbox = document.getElementById('consent-check');
+    var submitBtn = document.getElementById('consent-submit');
+    var confirmation = document.getElementById('consent-confirmation');
+
+    function validateForm() {
+      var hasPhone = phoneInput.value.replace(/\D/g, '').length >= 10;
+      var hasConsent = checkbox.checked;
+      submitBtn.disabled = !(hasPhone && hasConsent);
+    }
+
+    phoneInput.addEventListener('input', validateForm);
+    checkbox.addEventListener('change', validateForm);
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var phone = phoneInput.value.replace(/\D/g, '');
+      if (phone.length < 10 || !checkbox.checked) return;
+
+      // Build SMS link and open it
+      var body = encodeURIComponent("Hi Jeff, I'm interested in one of your collectibles. (Sent via jeffsdigitalcollectibles.com)");
+      var smsUrl = 'sms:+17158946330?body=' + body;
+
+      // Show confirmation
+      form.classList.add('hidden');
+      confirmation.classList.add('show');
+
+      // Open SMS app
+      window.open(smsUrl, '_blank');
+    });
+  </script>
+</body>
+</html>

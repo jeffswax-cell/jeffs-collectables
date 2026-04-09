@@ -1,0 +1,6 @@
+node_modules/
+.vercel/
+screenshot-*.png
+create-setup-doc.js
+take-screenshots.js
+Jeffs-Collectibles-Setup-Guide.docx

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy - Jeffs Digital Collectibles</title>
+  <meta name="description" content="Privacy Policy for Jeff's Digital Collectibles LLC.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="site-nav" id="site-nav">
+    <a href="/" class="nav-brand">
+      <img src="/logo.png" alt="Jeff's Digital Collectibles" class="nav-logo-img">
+      <span class="nav-brand-text">Jeffs Digital Collectibles</span>
+    </a>
+    <div class="nav-links" id="nav-links">
+      <a href="/" class="nav-link">Home</a>
+      <a href="/terms" class="nav-link">Terms</a>
+      <a href="/privacy" class="nav-link">Privacy</a>
+      <a href="/sms-consent" class="nav-link">SMS Consent</a>
+    </div>
+    <button class="nav-hamburger" id="nav-hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- CONTENT -->
+  <main class="legal-page">
+    <h1>Privacy Policy</h1>
+    <p class="legal-effective">Effective Date: March 6, 2026</p>
+
+    <h2>1. Who We Are</h2>
+    <p>Jeff's Digital Collectibles LLC is a Wisconsin Domestic LLC (File #J058561) that sells digital collectible assets stored on the WAX blockchain. This privacy policy explains what information we collect, how we use it, and your rights regarding that information.</p>
+
+    <h2>2. Information We Collect</h2>
+    <p>We collect very little information. Specifically:</p>
+    <ul>
+      <li><strong>Phone number:</strong> When you use the Enquire feature, you enter your phone number into the modal form. This number is used solely to initiate an SMS conversation between you and Jeff. Your phone number is not stored on our servers or in any database. It is only used within your device's native SMS application.</li>
+      <li><strong>SMS conversation content:</strong> If you send a text message through the Enquire feature, standard SMS records will exist on your phone and Jeff's phone. These conversations may include your name, phone number, and details about the items you're interested in.</li>
+      <li><strong>Basic analytics:</strong> Our hosting provider (Vercel) may collect standard server logs including IP addresses, browser type, and pages visited. We don't use any third-party analytics or tracking scripts on this site.</li>
+    </ul>
+
+    <h2>3. How We Use Your Information</h2>
+    <p>Your phone number and any SMS messages are used for one purpose: responding to your enquiry about a digital collectible. We will not use your contact information for marketing, sell it to third parties, or share it with anyone outside Jeff's Digital Collectibles LLC.</p>
+
+    <h2>4. Information We Don't Collect</h2>
+    <p>This site does not use cookies, does not require account creation, does not process payments, and does not track you across other websites. We don't collect your name, email address, or any personal information through the site itself, unless you voluntarily provide it via SMS or email.</p>
+
+    <h2>5. Third-Party Services</h2>
+    <p>This site uses the following third-party services:</p>
+    <ul>
+      <li><strong>Vercel:</strong> Website hosting. Subject to <a href="https://vercel.com/legal/privacy-policy" target="_blank" rel="noopener">Vercel's Privacy Policy</a>.</li>
+      <li><strong>WAX/AtomicAssets API:</strong> We fetch collectible data from the public WAX blockchain API. No personal data is sent to these services.</li>
+      <li><strong>Google Fonts:</strong> Font files loaded from Google's servers. Subject to <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's Privacy Policy</a>.</li>
+    </ul>
+
+    <h2>6. Data Retention</h2>
+    <p>Since we don't store your phone number or personal data on our servers, there's nothing for us to retain or delete on our end. SMS conversation history exists on the devices involved in the conversation and is subject to your mobile carrier's data retention policies.</p>
+
+    <h2>7. Your Rights</h2>
+    <p>You can ask us to stop contacting you at any time by replying STOP to any SMS message. If you'd like to know what information we have about you (which will be limited to SMS conversation history on Jeff's phone), contact us at the address below.</p>
+
+    <h2>8. Children's Privacy</h2>
+    <p>This site is not directed at anyone under the age of 18. We don't knowingly collect personal information from minors. If you believe a minor has contacted us, please let us know and we'll delete any related messages.</p>
+
+    <h2>9. Changes to This Policy</h2>
+    <p>We may update this policy from time to time. Changes will be posted on this page with an updated effective date.</p>
+
+    <div class="legal-contact">
+      <h3>Contact</h3>
+      <p>
+        Jeff's Digital Collectibles LLC<br>
+        Eau Claire, WI 54701<br>
+        Email: <a href="mailto:jeffswax@gmail.com">jeffswax@gmail.com</a><br>
+        Phone: (715) 894-6330
+      </p>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <img src="/logo.png" alt="Jeff's Digital Collectibles" class="footer-logo-img">
+    <div class="footer-brand">Jeff's Digital Collectibles LLC</div>
+    <div class="footer-note">All items verified on the WAX blockchain. Ownership is transparent and permanent.</div>
+    <div class="footer-links">
+      <a href="/terms">Terms</a>
+      <a href="/privacy">Privacy</a>
+      <a href="/sms-consent">SMS Consent</a>
+      <a href="mailto:jeffswax@gmail.com">Contact</a>
+    </div>
+    <div class="footer-wallet">Wallet: 1.prg.wam</div>
+    <div class="footer-legal">
+      Jeff's Digital Collectibles LLC &middot; Wisconsin Domestic LLC &middot; File #J058561 &middot; Eau Claire, WI 54701
+    </div>
+    <div class="footer-copy">&copy; 2026 Jeff's Digital Collectibles LLC</div>
+  </footer>
+
+  <script>
+    var hamburger = document.getElementById('nav-hamburger');
+    var navLinks = document.getElementById('nav-links');
+    if (hamburger) {
+      hamburger.addEventListener('click', function () {
+        navLinks.classList.toggle('open');
+        hamburger.classList.toggle('open');
+      });
+      navLinks.addEventListener('click', function (e) {
+        if (e.target.classList.contains('nav-link')) {
+          navLinks.classList.remove('open');
+          hamburger.classList.remove('open');
+        }
+      });
+    }
+    var navEl = document.getElementById('site-nav');
+    window.addEventListener('scroll', function () {
+      if (window.scrollY > 40) navEl.classList.add('scrolled');
+      else navEl.classList.remove('scrolled');
+    });
+  </script>
+</body>
+</html>

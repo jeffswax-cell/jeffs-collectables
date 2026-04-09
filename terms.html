@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Terms of Service - Jeffs Digital Collectibles</title>
+  <meta name="description" content="Terms of Service for Jeff's Digital Collectibles LLC.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="site-nav" id="site-nav">
+    <a href="/" class="nav-brand">
+      <img src="/logo.png" alt="Jeff's Digital Collectibles" class="nav-logo-img">
+      <span class="nav-brand-text">Jeffs Digital Collectibles</span>
+    </a>
+    <div class="nav-links" id="nav-links">
+      <a href="/" class="nav-link">Home</a>
+      <a href="/terms" class="nav-link">Terms</a>
+      <a href="/privacy" class="nav-link">Privacy</a>
+      <a href="/sms-consent" class="nav-link">SMS Consent</a>
+    </div>
+    <button class="nav-hamburger" id="nav-hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- CONTENT -->
+  <main class="legal-page">
+    <h1>Terms of Service</h1>
+    <p class="legal-effective">Effective Date: March 6, 2026</p>
+
+    <h2>1. About This Site</h2>
+    <p>This website is operated by Jeff's Digital Collectibles LLC, a Wisconsin Domestic LLC (File #J058561), based in Eau Claire, WI 54701. The site displays digital collectible assets held in a personal WAX blockchain wallet (1.prg.wam) and provides a way for interested buyers to contact us about purchasing those items.</p>
+
+    <h2>2. Nature of Transactions</h2>
+    <p>This site is a storefront for digital collectibles stored on the WAX blockchain. Items shown on this site are verified on-chain and held in the owner's wallet until transferred to a buyer. All purchases are arranged directly between the buyer and Jeff's Digital Collectibles LLC via text message or email. No transactions are processed through this website.</p>
+
+    <h2>3. No Warranties</h2>
+    <p>Digital collectibles are sold "as is." We make no guarantees about future value, rarity changes, or platform availability. Once an item is transferred to your WAX wallet, the sale is final. The WAX blockchain is a third-party platform outside our control, and we're not responsible for network outages, wallet issues, or changes to the WAX ecosystem.</p>
+
+    <h2>4. Pricing and Payment</h2>
+    <p>Prices, when listed, are indicative and may change. Final pricing is confirmed directly via text or email before any transfer takes place. Payment methods and terms are agreed upon between buyer and seller before the item is transferred. We accept various payment methods as discussed during the enquiry process.</p>
+
+    <h2>5. Enquiry Process</h2>
+    <p>The "Enquire" feature on this site opens your device's native SMS application with a pre-written message. By using this feature, you agree to our <a href="/sms-consent">SMS Consent Policy</a>. We don't store your phone number on our servers. The enquiry simply initiates a text conversation between you and Jeff.</p>
+
+    <h2>6. Intellectual Property</h2>
+    <p>The digital collectibles displayed on this site are created by their respective rights holders and minted on the WAX blockchain. Ownership of a digital collectible grants you the rights specified by the original creator and the WAX platform's terms. This site's design, branding, and code are the property of Jeff's Digital Collectibles LLC.</p>
+
+    <h2>7. Limitation of Liability</h2>
+    <p>Jeff's Digital Collectibles LLC is not liable for any indirect, incidental, or consequential damages arising from your use of this site or the purchase of digital collectibles. Our total liability for any claim related to this site or a transaction shall not exceed the purchase price of the item in question.</p>
+
+    <h2>8. Governing Law</h2>
+    <p>These terms are governed by the laws of the State of Wisconsin. Any disputes arising from these terms or your use of this site shall be resolved in the courts of Eau Claire County, Wisconsin.</p>
+
+    <h2>9. Changes to These Terms</h2>
+    <p>We may update these terms from time to time. Changes will be posted on this page with an updated effective date. Your continued use of the site after changes are posted constitutes acceptance of the revised terms.</p>
+
+    <div class="legal-contact">
+      <h3>Contact</h3>
+      <p>
+        Jeff's Digital Collectibles LLC<br>
+        Eau Claire, WI 54701<br>
+        Email: <a href="mailto:jeffswax@gmail.com">jeffswax@gmail.com</a><br>
+        Phone: (715) 894-6330
+      </p>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <img src="/logo.png" alt="Jeff's Digital Collectibles" class="footer-logo-img">
+    <div class="footer-brand">Jeff's Digital Collectibles LLC</div>
+    <div class="footer-note">All items verified on the WAX blockchain. Ownership is transparent and permanent.</div>
+    <div class="footer-links">
+      <a href="/terms">Terms</a>
+      <a href="/privacy">Privacy</a>
+      <a href="/sms-consent">SMS Consent</a>
+      <a href="mailto:jeffswax@gmail.com">Contact</a>
+    </div>
+    <div class="footer-wallet">Wallet: 1.prg.wam</div>
+    <div class="footer-legal">
+      Jeff's Digital Collectibles LLC &middot; Wisconsin Domestic LLC &middot; File #J058561 &middot; Eau Claire, WI 54701
+    </div>
+    <div class="footer-copy">&copy; 2026 Jeff's Digital Collectibles LLC</div>
+  </footer>
+
+  <script>
+    // Hamburger menu toggle
+    var hamburger = document.getElementById('nav-hamburger');
+    var navLinks = document.getElementById('nav-links');
+    if (hamburger) {
+      hamburger.addEventListener('click', function () {
+        navLinks.classList.toggle('open');
+        hamburger.classList.toggle('open');
+      });
+      navLinks.addEventListener('click', function (e) {
+        if (e.target.classList.contains('nav-link')) {
+          navLinks.classList.remove('open');
+          hamburger.classList.remove('open');
+        }
+      });
+    }
+    // Nav scroll
+    var navEl = document.getElementById('site-nav');
+    window.addEventListener('scroll', function () {
+      if (window.scrollY > 40) navEl.classList.add('scrolled');
+      else navEl.classList.remove('scrolled');
+    });
+  </script>
+</body>
+</html>
