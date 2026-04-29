@@ -800,6 +800,32 @@ body {
   border-color: var(--color-text-dim);
 }
 
+.modal-btn-email {
+  display: block;
+  width: 100%;
+  margin-bottom: 4px;
+}
+
+.modal-divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 18px 0 14px;
+  color: var(--color-text-muted);
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.modal-divider::before,
+.modal-divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--color-border);
+}
+
 .modal-confirm {
   text-align: center;
 }

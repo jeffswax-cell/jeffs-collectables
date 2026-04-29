@@ -33,6 +33,7 @@
   var modalConsent = document.getElementById('enquiry-consent');
   var modalSendBtn = document.getElementById('modal-send');
   var modalSmsLink = document.getElementById('modal-sms-link');
+  var modalEmailLink = document.getElementById('modal-email-link');
 
   // ---- State ----
   var currentItems = [];
@@ -130,9 +131,18 @@
 
     // Build SMS link
     var body = encodeURIComponent(
-      "Hi Jeff, I'm interested in " + name + " (Asset #" + assetId + ") from your collection. Is it still available?"
+      "Hi Jeff, I'm interested in " + name + " (Asset #" + assetId + ") from your collection. Is it still available? (Sent via jeff.adscommandcenter.io)"
     );
     modalSmsLink.href = 'sms:' + JEFF_PHONE + '?body=' + body;
+
+    // Build email link (always available — no consent required)
+    if (modalEmailLink) {
+      var emailSubject = encodeURIComponent('Enquiry: ' + name + ' (Asset #' + assetId + ')');
+      var emailBody = encodeURIComponent(
+        "Hi Jeff,\n\nI'm interested in " + name + " (Asset #" + assetId + ") from your " + collection + " collection. Is it still available?\n\nThanks!\n\n(Sent via jeff.adscommandcenter.io)"
+      );
+      modalEmailLink.href = 'mailto:jeffswax@gmail.com?subject=' + emailSubject + '&body=' + emailBody;
+    }
   }
 
   function closeModal() {

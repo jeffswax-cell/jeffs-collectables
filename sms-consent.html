@@ -188,8 +188,12 @@
 
     <!-- ========== STATIC OPT-IN FORM ========== -->
     <div class="consent-form-section">
-      <h2>Enquire About an Item via SMS</h2>
-      <p class="form-subtitle">Enter your phone number to text Jeff about a collectible you're interested in.</p>
+      <h2>Enquire About an Item</h2>
+      <p class="form-subtitle">Choose how you'd like to enquire. SMS is optional.</p>
+      <p class="form-subtitle" style="margin-top:-0.75rem;">
+        <strong>Prefer email instead?</strong>
+        <a href="mailto:jeffswax@gmail.com">jeffswax@gmail.com</a>
+      </p>
 
       <form id="consent-form" class="consent-form-inner" novalidate>
         <label class="consent-form-label" for="consent-phone">Phone number <span style="color:var(--color-error)">*</span></label>
@@ -199,9 +203,9 @@
         <input type="text" id="consent-name" class="consent-form-input" placeholder="Your name" autocomplete="name">
 
         <div class="consent-checkbox-wrap">
-          <input type="checkbox" id="consent-check" required>
+          <input type="checkbox" id="consent-check">
           <span class="consent-checkbox-text">
-            I agree to receive SMS messages from <strong>Jeff's Digital Collectibles LLC</strong> about item enquiries, including availability, pricing, and transfer confirmation.
+            If you choose SMS, I agree to receive SMS messages from <strong>Jeff's Digital Collectibles LLC</strong> about item enquiries, including availability, pricing, and transfer confirmation.
             Message frequency varies. Msg &amp; Data rates may apply.
             Reply STOP to opt out, HELP for help.
             See <a href="/terms" target="_blank">Terms of Service</a>, <a href="/privacy" target="_blank">Privacy Policy</a>, and <a href="/sms-consent">SMS Consent Policy</a>.
@@ -231,7 +235,7 @@
       <p>Jeff's Digital Collectibles LLC offers an SMS-based enquiry service that lets potential buyers contact Jeff directly about digital collectible items listed on this website. When you use the opt-in form above or the "Enquire" button on any item, you can send a text message to Jeff about that specific item.</p>
 
       <h2>How to Opt In</h2>
-      <p>You opt in to SMS communication by completing the form above or the enquiry form on the homepage. The opt-in process requires you to:</p>
+      <p>SMS is optional — you can always enquire by email at <a href="mailto:jeffswax@gmail.com">jeffswax@gmail.com</a>. If you choose SMS, you opt in by completing the form above or the enquiry form on the homepage. To opt in to SMS, you:</p>
       <ul>
         <li>Enter your phone number</li>
         <li>Check the consent checkbox confirming you agree to receive SMS messages from Jeff's Digital Collectibles LLC</li>
@@ -345,7 +349,7 @@
       if (phone.length < 10 || !checkbox.checked) return;
 
       // Build SMS link and open it
-      var body = encodeURIComponent("Hi Jeff, I'm interested in one of your collectibles. (Sent via jeffsdigitalcollectibles.com)");
+      var body = encodeURIComponent("Hi Jeff, I'm interested in one of your collectibles. (Sent via jeff.adscommandcenter.io)");
       var smsUrl = 'sms:+17158946330?body=' + body;
 
       // Show confirmation
