@@ -3,7 +3,8 @@
     { "source": "/debug", "destination": "/debug.html" },
     { "source": "/terms", "destination": "/terms.html" },
     { "source": "/privacy", "destination": "/privacy.html" },
-    { "source": "/sms-consent", "destination": "/sms-consent.html" }
+    { "source": "/sms-consent", "destination": "/sms-consent.html" },
+    { "source": "/a2p-review", "destination": "/a2p-review.html" }
   ],
   "headers": [
     {

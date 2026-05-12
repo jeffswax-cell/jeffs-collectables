@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A2P 10DLC Compliance Review - Jeffs Digital Collectibles</title>
+  <meta name="description" content="A2P 10DLC compliance review page for Twilio and TCR reviewers documenting the SMS opt-in experience on jeff.adscommandcenter.io.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+  <style>
+    .a2p-summary {
+      background: var(--color-bg-card);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: 1.5rem 1.75rem;
+      margin: 1.5rem 0 2.25rem;
+      box-shadow: var(--shadow-card);
+    }
+    .a2p-summary p {
+      margin: 0.4rem 0;
+    }
+    .a2p-summary .label {
+      font-weight: 700;
+      color: var(--color-text);
+    }
+    .a2p-screenshot {
+      display: block;
+      width: 100%;
+      max-width: 900px;
+      margin: 1.25rem auto 0.5rem;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-sm);
+      box-shadow: var(--shadow-card);
+      background: var(--color-bg);
+    }
+    .a2p-caption {
+      max-width: 900px;
+      margin: 0 auto 2rem;
+      color: var(--color-text);
+      font-size: 0.95rem;
+      line-height: 1.65;
+    }
+    .a2p-quote {
+      max-width: 900px;
+      margin: 0.5rem auto 2rem;
+      padding: 0.85rem 1.1rem;
+      background: var(--color-bg);
+      border-left: 3px solid var(--color-blue);
+      border-radius: var(--radius-sm);
+      color: var(--color-text);
+      font-size: 0.92rem;
+      line-height: 1.6;
+    }
+    .a2p-divider {
+      border: none;
+      border-top: 1px solid var(--color-border);
+      margin: 2.5rem 0;
+    }
+    .a2p-links ul {
+      padding-left: 1.5rem;
+    }
+    .a2p-links li {
+      margin-bottom: 0.35rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="site-nav" id="site-nav">
+    <a href="/" class="nav-brand">
+      <img src="/logo.png" alt="Jeff's Digital Collectibles" class="nav-logo-img">
+      <span class="nav-brand-text">Jeffs Digital Collectibles</span>
+    </a>
+    <div class="nav-links" id="nav-links">
+      <a href="/" class="nav-link">Home</a>
+      <a href="/terms" class="nav-link">Terms</a>
+      <a href="/privacy" class="nav-link">Privacy</a>
+      <a href="/sms-consent" class="nav-link">SMS Consent</a>
+    </div>
+    <button class="nav-hamburger" id="nav-hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- CONTENT -->
+  <main class="legal-page">
+    <h1>A2P 10DLC Compliance Review</h1>
+
+    <div class="a2p-summary">
+      <p><span class="label">Business:</span> Jeff's Digital Collectibles LLC</p>
+      <p><span class="label">Website:</span> <a href="https://jeff.adscommandcenter.io" target="_blank" rel="noopener">https://jeff.adscommandcenter.io</a></p>
+      <p><span class="label">Use case:</span> Customer care / conversational SMS for item inquiries initiated by users on our website.</p>
+    </div>
+
+    <p>This page is provided for Twilio and The Campaign Registry (TCR) reviewers. It documents the complete SMS opt-in experience on our website with screenshots of each step.</p>
+
+    <hr class="a2p-divider">
+
+    <h2>Opt-in summary</h2>
+    <p>SMS is optional and not a condition of purchase. Users may contact us by email instead. We support two web-based opt-in paths and no other opt-in methods (no keyword opt-in, no paper forms, no verbal opt-in).</p>
+    <p><strong>Path 1:</strong> Homepage item card &rarr; "Enquire" button &rarr; modal &rarr; check unchecked consent box &rarr; "Send Enquiry via SMS"<br>
+    <strong>Path 2:</strong> Direct navigation to <a href="/sms-consent">/sms-consent</a> &rarr; form &rarr; check unchecked consent box &rarr; "Send Enquiry via SMS"</p>
+    <p>After submission, the user's native SMS app opens with a pre-filled message to initiate the inquiry thread.</p>
+
+    <hr class="a2p-divider">
+
+    <h2>1. Homepage with item cards</h2>
+    <img src="/a2p/01-homepage-collection.png" alt="Homepage showing the digital collectibles grid with Enquire buttons on each item card" class="a2p-screenshot">
+    <p class="a2p-caption">The homepage displays available digital collectible items. Each item card has an "Enquire" button that opens the consent modal (shown next).</p>
+
+    <hr class="a2p-divider">
+
+    <h2>2. Enquire modal &mdash; consent unchecked, Send disabled</h2>
+    <img src="/a2p/02-enquire-modal-unchecked.png" alt="Enquire About This Item modal with consent checkbox unchecked and Send Enquiry via SMS button disabled" class="a2p-screenshot">
+    <p class="a2p-caption">Clicking "Enquire" on any item opens this modal. The user enters their phone number, then must check the consent checkbox. The "Send Enquiry via SMS" button is disabled until the checkbox is checked and a valid phone number is entered. The consent checkbox starts <strong>unchecked</strong> (active consent required).</p>
+    <p class="a2p-caption">Checkbox disclosure text:</p>
+    <div class="a2p-quote">If you choose SMS, I agree to receive SMS messages from Jeff's Digital Collectibles LLC about this item enquiry. Msg frequency varies. Msg &amp; Data rates may apply. Reply STOP to opt out, HELP for help. See Terms, Privacy Policy, and SMS Consent Policy. Consent is not a condition of purchase.</div>
+
+    <hr class="a2p-divider">
+
+    <h2>3. Enquire modal &mdash; consent checked, Send enabled</h2>
+    <img src="/a2p/03-enquire-modal-checked.png" alt="Same modal with consent checkbox checked and Send Enquiry via SMS button enabled" class="a2p-screenshot">
+    <p class="a2p-caption">Once the user checks the consent box and enters a valid phone number, the "Send Enquiry via SMS" button becomes active. Clicking it opens the user's native SMS app pre-filled with a message addressed to Jeff initiating the inquiry thread.</p>
+
+    <hr class="a2p-divider">
+
+    <h2>4. Dedicated SMS Consent page</h2>
+    <img src="/a2p/04-sms-consent-page.png" alt="Full SMS Consent and Opt-In page with form and program disclosures" class="a2p-screenshot">
+    <p class="a2p-caption">Live at: <a href="https://jeff.adscommandcenter.io/sms-consent" target="_blank" rel="noopener">https://jeff.adscommandcenter.io/sms-consent</a></p>
+    <p class="a2p-caption">A standalone opt-in page also linked from the site header and footer. It contains the same enquiry form plus full program disclosures: Program Description, How to Opt In, Message Frequency, Message and Data Rates, How to Opt Out, Help, Supported Carriers, Privacy, and Terms.</p>
+
+    <hr class="a2p-divider">
+
+    <h2>5. Privacy Policy &mdash; SMS / Mobile Number Privacy section</h2>
+    <img src="/a2p/05-privacy-policy-sms-section.png" alt="Privacy Policy Section 3 showing SMS and mobile number privacy disclosures" class="a2p-screenshot">
+    <p class="a2p-caption">Live at: <a href="https://jeff.adscommandcenter.io/privacy" target="_blank" rel="noopener">https://jeff.adscommandcenter.io/privacy</a></p>
+    <p class="a2p-caption">Section 3 of the Privacy Policy explicitly states that mobile numbers and SMS consent information are not shared with third parties or affiliates for marketing or promotional purposes, and includes message frequency and message-and-data-rates disclosures.</p>
+
+    <hr class="a2p-divider">
+
+    <h2>6. Terms of Service</h2>
+    <img src="/a2p/06-terms-of-service.png" alt="Terms of Service page" class="a2p-screenshot">
+    <p class="a2p-caption">Live at: <a href="https://jeff.adscommandcenter.io/terms" target="_blank" rel="noopener">https://jeff.adscommandcenter.io/terms</a></p>
+
+    <hr class="a2p-divider">
+
+    <h2>Live page links</h2>
+    <div class="a2p-links">
+      <ul>
+        <li>Homepage: <a href="https://jeff.adscommandcenter.io" target="_blank" rel="noopener">https://jeff.adscommandcenter.io</a></li>
+        <li>SMS Consent Policy: <a href="https://jeff.adscommandcenter.io/sms-consent" target="_blank" rel="noopener">https://jeff.adscommandcenter.io/sms-consent</a></li>
+        <li>Privacy Policy: <a href="https://jeff.adscommandcenter.io/privacy" target="_blank" rel="noopener">https://jeff.adscommandcenter.io/privacy</a></li>
+        <li>Terms of Service: <a href="https://jeff.adscommandcenter.io/terms" target="_blank" rel="noopener">https://jeff.adscommandcenter.io/terms</a></li>
+      </ul>
+    </div>
+
+    <div class="legal-contact">
+      <h3>Contact</h3>
+      <p>
+        Jeff's Digital Collectibles LLC<br>
+        Eau Claire, WI 54701<br>
+        Email: <a href="mailto:jeffswax@gmail.com">jeffswax@gmail.com</a><br>
+        Phone: (715) 894-6330
+      </p>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <img src="/logo.png" alt="Jeff's Digital Collectibles" class="footer-logo-img">
+    <div class="footer-brand">Jeff's Digital Collectibles LLC</div>
+    <div class="footer-note">All items verified on the WAX blockchain. Ownership is transparent and permanent.</div>
+    <div class="footer-links">
+      <a href="/terms">Terms</a>
+      <a href="/privacy">Privacy</a>
+      <a href="/sms-consent">SMS Consent</a>
+      <a href="mailto:jeffswax@gmail.com">Contact</a>
+    </div>
+    <div class="footer-wallet">Wallet: 1.prg.wam</div>
+    <div class="footer-legal">
+      Jeff's Digital Collectibles LLC &middot; Wisconsin Domestic LLC &middot; File #J058561 &middot; Eau Claire, WI 54701
+    </div>
+    <div class="footer-copy">&copy; 2026 Jeff's Digital Collectibles LLC</div>
+  </footer>
+
+  <script>
+    var hamburger = document.getElementById('nav-hamburger');
+    var navLinks = document.getElementById('nav-links');
+    if (hamburger) {
+      hamburger.addEventListener('click', function () {
+        navLinks.classList.toggle('open');
+        hamburger.classList.toggle('open');
+      });
+      navLinks.addEventListener('click', function (e) {
+        if (e.target.classList.contains('nav-link')) {
+          navLinks.classList.remove('open');
+          hamburger.classList.remove('open');
+        }
+      });
+    }
+    var navEl = document.getElementById('site-nav');
+    window.addEventListener('scroll', function () {
+      if (window.scrollY > 40) navEl.classList.add('scrolled');
+      else navEl.classList.remove('scrolled');
+    });
+  </script>
+</body>
+</html>
